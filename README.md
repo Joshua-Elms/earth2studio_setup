@@ -7,7 +7,7 @@ Materials:
 - uv install guide: https://docs.astral.sh/uv/getting-started/installation/
 - 
 
-Add to .bashrc: `export UV_CACHE_DIR=/N/slate/jmelms/software/.uv_cache"
+Add to .bashrc: `export UV_CACHE_DIR=/N/slate/jmelms/software/.uv_cache_real"
 
 Setup Steps
 1. `cd /N/u/jmelms/BigRed200/projects/earth2studio_setup/`
@@ -21,3 +21,9 @@ Setup Steps
 9. `jupyter notebook --NotebookApp.allow_origin='*' --NotebookApp.ip='0.0.0.0' --port 9999` - to open a jupyter notebook
 10. `mkdir /N/slate/jmelms/projects/.E2S_cache;echo EARTH2STUDIO_CACHE=/N/slate/jmelms/projects/.E2S_cache > .env` - create cache and populate dotenv file
 11. 
+
+Notes:
+1. You may have to play around with the cache location for uv to get it right. 
+2. If you don't link an [NGC](https://org.ngc.nvidia.com/) account from `test.py`, you'll get: "WARNING  | earth2studio.models.auto.ngc:__init__:126 - Using NGC guest mode, which may fail due to unauthorized access. Consider using a valid NGC API key and org". Not breaking yet, so I'll wait on the auth. 
+3. 
+conda deactivate; cd earth2studio-project/;source .venv/bin/activate;cd ..
