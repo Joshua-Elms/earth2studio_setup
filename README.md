@@ -15,7 +15,7 @@ Setup Steps
 3. `curl -LsSf https://astral.sh/uv/install.sh | sh`
 4. `uv init --python=3.12`
 5. `uv add "earth2studio @ git+https://github.com/Joshua-Elms/earth2studio-cu126.git" --extra sfno`
-6. `uv pip install matplotlib jupyter uv earth2studio[dlwp]` - needed for vis and interaction
+6. `uv pip install matplotlib jupyter uv earth2studio[dlwp] xarray[io,parallel,viz]` - needed for vis and interaction
 7. `source .venv/bin/activate; cd ..` - to use python env and return to repo level
 8. `srun -p gpu -A r00389 --mem=200GB --time=02:00:00 --gpus-per-node v100:1 --pty bash` - to get a GPU job on quartz
 9. `jupyter notebook --NotebookApp.allow_origin='*' --NotebookApp.ip='0.0.0.0' --port 9999` - to open a jupyter notebook
