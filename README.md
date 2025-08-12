@@ -13,8 +13,8 @@ Setup Steps
 1. `cd /N/u/jmelms/BigRed200/projects/earth2studio_setup/`
 2. `mkdir earth2studio-project && cd earth2studio-project`
 3. `curl -LsSf https://astral.sh/uv/install.sh | sh`
-4. `uv init --python=3.12`
-5. `uv add "earth2studio @ git+https://github.com/Joshua-Elms/earth2studio-cu126.git" --extra sfno pangu fuxi graphcast`
+4. `uv init --python=/N/soft/rhel8/python/gnu/3.12.4/bin/python` (or any installation of python... need to make sure it has Python.h header located at python/.../Python.h, maybe under /include or /lib, since SFNO -> Torch -> Triton attempts to compile stuff from src at runtime. Otherwise use --python=3.12, just specifying version).
+5. `uv add "earth2studio @ git+https://github.com/Joshua-Elms/earth2studio-cu126.git" --extra sfno --extra pangu --extra fuxi --extra graphcast`
 6. `uv pip install matplotlib jupyter uv earth2studio[dlwp] xarray[io,parallel,viz] cdsapi` - needed for vis and interaction
 7. `source .venv/bin/activate; cd ..` - to use python env and return to repo level
 8. `srun -p gpu -A r00389 --mem=200GB --time=02:00:00 --gpus-per-node v100:1 --pty bash` - to get a GPU job on quartz
